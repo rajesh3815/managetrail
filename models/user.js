@@ -13,11 +13,12 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       require: true,
+      unique: true, 
     },
   },
   { timestamps: { createdAt: "", updatedAt: "" } }
 );
-
+userSchema.index({ email: 1 });
 const user = new mongoose.model("user", userSchema);
 
 module.exports = user;
