@@ -41,13 +41,13 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  const isUserExist = await user.findOne({ email });
-  if (!isUserExist) {
-    return res.status(500).send({
-      message: "user doesnot exist!",
-      status: 500,
-    });
-  }
+  // const isUserExist = await user.findOne({ email });
+  // if (!isUserExist) {
+  //   return res.status(500).send({
+  //     message: "user doesnot exist!",
+  //     status: 500,
+  //   });
+  // }
   try {
     const decryptPassword = await bcrypt.compare(
       password,
@@ -77,7 +77,7 @@ const loginUser = async (req, res) => {
       message: "Error in login",
       status: 300,
     });
-    console.log("Error from userLogin:)", error);
+    // console.log("Error from userLogin:)", error);
   }
 };
 
