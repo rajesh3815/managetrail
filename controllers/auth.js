@@ -77,7 +77,7 @@ const loginUser = async (req, res) => {
       message: "Error in login",
       status: 300,
     });
-    // console.log("Error from userLogin:)", error);
+    console.log("Error from userLogin:)", error);
   }
 };
 
